@@ -1,5 +1,5 @@
 '''
-This is just a very rough raft for creating a character for 'Degenesis'.
+This is just a very rough draft for creating a character for 'Degenesis'.
  (Important note:  Character must choose between Primal and Focus)
 
 1. Choose Culture, Concept and Cult
