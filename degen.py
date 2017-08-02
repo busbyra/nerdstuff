@@ -3,7 +3,7 @@ This is just a very rough draft for creating a character for 'Degenesis'.
  (Important note:  Character must choose between Primal and Focus)
 
 1. Choose Culture, Concept and Cult
-
+ # Test to check out git uploading
 2. Spend Points: 
     -10 Attribute.  Attribute max is 3. 
     -28 skill points. Skill Max is 2.
