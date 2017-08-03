@@ -29,6 +29,9 @@ concepts = Adventurer, Creator, Mentor, Martyr, Ruler, Seeker, Healer, Tradition
 cults = Spitalians, Chroniclers, Hellvetics, Judges, Clanners, Scrappers, Neoubyans, Scourgers, Anubians, Jehammedans, Apocalyptics, Anabaptists, Palers
 '''
 class Character(object):
+    
+    # The character object holds all of the basic data of the character
+    
     name = ''
     attributePoints = 10
     skillPoints = 28
@@ -41,6 +44,8 @@ class Character(object):
     intelligence = 1
     psyche = 1
     instinct = 1
+    #The below variable is setup as a list?  tuple?  I can't recall. Google
+    
     attributes = ['name','culture', 'concept', 'cult', 'body', 'agility', 'charisma', 'intelligence', 'psyche', 'instinct', 'attributePoints', 'skillPoints']
     
     def __init__(self,name):
@@ -57,11 +62,24 @@ class Character(object):
                 attribute = accepted_dict[int(attribute)]
             except:
                 print "Input was invalid.  Please enter either an attribute or its corresponding number "
-        amount = None
+        amount = None # This will constantly set amount to none after asignment
         while type(amount) != int and self.attributePoints > 0:
-            amount = int(raw_input("Raise to what number? "))
-            self.attributePoints -= amount
-        self.__setattr__(attribute, self.__getattribute__(attribute) + amount)
+            print "Test1"
+            amount = raw_input("Raise to what number? ") # This shit should store
+            check = amount
+            attrcheck = self.attributePoints
+            try:# This shit should try to validate amount
+                test = int(amount)
+                print("Oops")
+            except ValueError: # this is what 'we' forgot
+                print "PROTEIN SHAKE!" # This should be what is called
+                break;
+            #attrcheck -= int(amount) # OUTSIDE, YOU
+            if int(amount) < 0:
+                print "Nnnnnoooooo"
+            else:
+                self.attributePoints -= int(amount)
+                self.__setattr__(attribute, self.__getattribute__(attribute) + int(amount))
 
     def __str__(self):
         return "\n".join("%*s\t: %s"%(13,n, self.__getattribute__(n)) for n in self.attributes)
